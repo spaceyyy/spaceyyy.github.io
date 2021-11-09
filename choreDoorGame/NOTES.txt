@@ -1,0 +1,17 @@
+
+
+codecademy choor-door files were last updated on 
+	- 8/22/2017
+	- 10/28/2021
+
+
+Project should be finished! If need to add more functionalities or Todo's add them here and update
+application with these new features.
+
+	Todo:
+		(+)  add another door
+		(+)  add another game mode/genre
+		(+)  add a counter to keep track of winning streak
+		(+)  add functionality for touchscreen users
+		(+)  add mobile version  (think media-queries)
+
