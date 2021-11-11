@@ -4,13 +4,13 @@ My first github page(s) which I will use to display projects that I have finishe
 
 ## Table of Contents
 
-+ [Introduction]()
-+ [Technologies]()
-+ [Examples of Use]()
-+ [Project Status]()
-+ [Room for Improvement]()
-+ [Sources/Acknowledgements]()
-+ [Contact]()
++ [Introduction](https://github.com/spaceyyy/spaceyyy.github.io#introduction)
++ [Technologies](https://github.com/spaceyyy/spaceyyy.github.io#technologies)
++ [Examples of Use](https://github.com/spaceyyy/spaceyyy.github.io#examples-of-use)
++ [Project Status](https://github.com/spaceyyy/spaceyyy.github.io#project-status)
++ [Room for Improvement](https://github.com/spaceyyy/spaceyyy.github.io#room-for-improvement)
++ [Sources/Acknowledgements](https://github.com/spaceyyy/spaceyyy.github.io#sourcesacknowledgements)
++ [Contact](https://github.com/spaceyyy/spaceyyy.github.io#contact)
 
 ## Introduction
  
@@ -49,7 +49,7 @@ My first github page(s) which I will use to display projects that I have finishe
 
 ### Examples of Use
 
-![defaultFrontPage]
+![frontPageSpaceyGithub](https://user-images.githubusercontent.com/18295073/141342749-0335ca98-ca21-422f-b839-3e59065445c7.PNG)
 
 ### Project Status
 
