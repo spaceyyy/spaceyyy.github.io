@@ -22,7 +22,7 @@ My first github page(s) which I will use to display projects that I have finishe
 
 ### Technologies
 
-+ Notepad
++ Notepad  
 + Notepad ++
 + Brackets
 + Sublime
@@ -61,6 +61,7 @@ __Todo:__
 + Add projects worked on
 + Add technologies used
 + Update README.md
++ Technologies under Technology, move side to side instead of completely vertically
 
 ### Sources/Acknowledgements
 
