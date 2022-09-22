@@ -1,6 +1,6 @@
 
 finish completing readme for this project, move project to dir of the name of this headfirst book,
-update spaceyyy readme, update description part of web
+update spaceyyy readme, update description part of web, rename files better
 
 go through files and clickable links either make another page or "#" link. some files need to add
 . to the end of artist name such as l.p.j
