@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be the Browser</title>
+  <script>
+    // be 1 answer
+    var count = 0;
+    for (var i = 0; i < 5; i++) {
+      count = count + i;
+    }
+    alert("count is " + count);
+    // 10
+
+    // be 2 answer
+    var tops = 5;
+    var count = 0;
+    while (tops > 0) {
+      for (var spins = 0; spins < 3; spins++) {
+        alert("Top " + tops + " is spinning!");
+        count++;
+        console.log(count);
+      }
+      tops = tops - 1;
+    }
+    alert("Tops spin: " + count);
+    // 15
+
+
+    // be 3 answer
+    count = 0;
+    for (var berries = 5; berries > 0; berries--) {
+      alert("Eating a berry");
+      count++;
+      console.log(count);
+    }
+    alert("eat berries: " + count);
+    // 5
+
+    // be 4 answer
+    count = 0;
+    for (var scoops = 0; scoops < 10; scoops++) {
+      alert("There's more ice cream!");
+      count++;
+      console.log(count);
+    }
+    alert("Life without ice cream isn't the same: " + count);
+    // 10
+
+  </script>
+</head>
+<body>
+  <h1>Be the Browser</h1>
+
+</body>
+</html>
