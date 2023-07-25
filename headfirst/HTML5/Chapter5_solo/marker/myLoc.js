@@ -1,7 +1,7 @@
 /* myLoc.js */
 
 var map = null;
-var ourCoords =  {
+var ourCoords = {
 	latitude: 47.624851,
 	longitude: -122.52099
 };
@@ -10,7 +10,6 @@ window.onload = getMyLocation;
 
 function getMyLocation() {
 	if (navigator.geolocation) {
-
 		navigator.geolocation.getCurrentPosition(
 			displayLocation,
 			displayError);
@@ -45,7 +44,7 @@ function computeDistance(startCoords, destCoords) {
 	var destLatRads = degreesToRadians(destCoords.latitude);
 	var destLongRads = degreesToRadians(destCoords.longitude);
 
-	var Radius = 6371; // radius of the Earth in km
+	var Radius = 6371;  // radius of the Earth in km
 	var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) +
 					Math.cos(startLatRads) * Math.cos(destLatRads) *
 					Math.cos(startLongRads - destLongRads)) * Radius;
@@ -63,6 +62,7 @@ function degreesToRadians(degrees) {
 function showMap(coords) {
 	var googleLatAndLong = new google.maps.LatLng(coords.latitude,
 												  coords.longitude);
+												  
 	var mapOptions = {
 		zoom: 10,
 		center: googleLatAndLong,

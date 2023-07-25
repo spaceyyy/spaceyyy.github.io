@@ -1,6 +1,5 @@
 /* myLoc.js */
 
-
 window.onload = getMyLocation;
 
 function getMyLocation() {

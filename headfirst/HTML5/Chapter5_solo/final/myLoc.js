@@ -2,7 +2,7 @@
 
 var watchId = null;
 var map = null;
-var ourCoords =  {
+var ourCoords = {
 	latitude: 47.624851,
 	longitude: -122.52099
 };
@@ -57,10 +57,10 @@ function computeDistance(startCoords, destCoords) {
 	var destLatRads = degreesToRadians(destCoords.latitude);
 	var destLongRads = degreesToRadians(destCoords.longitude);
 
-	var Radius = 6371; // radius of the Earth in km
+	var Radius = 6371;  // radius of the Earth in km
 	var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) +
-					Math.cos(startLatRads) * Math.cos(destLatRads) *
-					Math.cos(startLongRads - destLongRads)) * Radius;
+					 Math.cos(startLatRads) * Math.cos(destLatRads) *
+					 Math.cos(startLongRads - destLongRads)) * Radius;
 
 	return distance;
 }
@@ -75,6 +75,7 @@ function degreesToRadians(degrees) {
 function showMap(coords) {
 	var googleLatAndLong = new google.maps.LatLng(coords.latitude,
 												  coords.longitude);
+
 	var mapOptions = {
 		zoom: 10,
 		center: googleLatAndLong,
@@ -87,6 +88,7 @@ function showMap(coords) {
 	var title = "Your Location";
 	var content = "You are here: " + coords.latitude + ", " + coords.longitude;
 	addMarker(map, googleLatAndLong, title, content);
+
 }
 
 function addMarker(map, latlong, title, content) {
@@ -148,7 +150,7 @@ function scrollMapToPosition(coords) {
 }
 
 function clearWatch() {
-	if (watchId) {
+	if (watchId) {  // in regular myLoc.js file not in a dir => if (watchId != null); but believe same thing since watchId would have a value
 		navigator.geolocation.clearWatch(watchId);
 		watchId = null;
 	}
