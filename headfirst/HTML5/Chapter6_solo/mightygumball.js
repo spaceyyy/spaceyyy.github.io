@@ -18,7 +18,7 @@ function init() {
 function getSales_XHRv1() {
   // change the URL to match the location where you
   // put the sales.json file
-  var url = "sales.json";
+  var url = "sales.json";  // original code: "http://localhost/gumball/sales.json"
   var request = new XMLHttpRequest();
   request.open("GET", url);
   request.onreadystatechange = function() {
@@ -30,14 +30,14 @@ function getSales_XHRv1() {
 }
 
 //
-// With XMLHttpRequest Level 2 (implemented in the new versions of Firefox, Safari
+// With XMLHttpRequest Level 2 (implemented in new versions of Firefox, Safari
 // and Chrome) you can check progress and check for the "load" event with the
 // onload event handler instead of checking the onreadystatechange
 //
 function getSales() {
   // change the URL to match the location where you
   // put the sales.json file
-  var url = "sales.json";
+  var url = "sales.json";  // same url originally above in comments
   var request = new XMLHttpRequest();
   request.open("GET", url);
   request.onload = function() {
