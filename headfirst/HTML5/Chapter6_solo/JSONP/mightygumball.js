@@ -15,7 +15,7 @@ function init() {
 
 function handleRefresh() {
   console.log("here");
-  var url = "http://gumball.wickedlysmart.com" +
+  var url = "https://gumball.wickedlysmart.com" +
               "?callback=updateSales" +
               "&lastreporttime=" + lastReportTime +
               "&random" + (new Date()).getTime();
