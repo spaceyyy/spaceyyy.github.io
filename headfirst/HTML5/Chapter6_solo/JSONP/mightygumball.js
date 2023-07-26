@@ -1,6 +1,6 @@
 /* mightygumball.js */
 /*
- * get the content of a JSON file using JSOP
+ * get the content of a JSON file using JSONP
  * update every 3 seconds.
  *
  */
@@ -18,7 +18,7 @@ function handleRefresh() {
   var url = "http://gumball.wickedlysmart.com" +
               "?callback=updateSales" +
               "&lastreporttime=" + lastReportTime +
-              "&random=" + (new Date()).getTime();
+              "&random" + (new Date()).getTime();
   var newScriptElement = document.createElement("script");
   newScriptElement.setAttribute("src", url);
   newScriptElement.setAttribute("id", "jsonp");
