@@ -14,9 +14,10 @@ function init() {
 }
 
 // in original ` url = "http:[...] + '&random' "
+// can only populate if  ` url = "http" not "https" ` but will not bypass error unless "https"
 function handleRefresh() {
   console.log("here");
-  var url = "https://gumball.wickedlysmart.com" +
+  var url = "http://gumball.wickedlysmart.com" +
               "?callback=updateSales" +
               "&lastreporttime=" + lastReportTime +
               "&random=" + (new Date()).getTime();
