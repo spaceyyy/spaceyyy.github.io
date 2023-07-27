@@ -14,7 +14,22 @@ function init() {
 }
 
 // in original ` url = "http:[...] + '&random' "
-// can only populate if  ` url = "http" not "https" ` but will not bypass error unless "https"
+// can only populate if  ` url = "http" not "https" `but will not bypass error unless "https"
+
+// try to add a proxy server ahead of gumball url such as `https:cors-anywhere.heroku.app/[...gumball..]
+// and 3 other alternative proxy servers and still receiving a error 404. I believe the issue is
+// that the link no longer works, which checked to see if so and it did not, also found the original
+// user's github saying the link is broken. Only odd thing is, when ran on my own file C:/Users...
+// it works on all three HFHTML5 folders from spaceyyy.github, HFHTML5_solo, and hfhtml5, but only
+// when all browsers are closed and only opened in one browser. For example: All browsers must be 
+// closed, but only open each file from each directory on that specific browsing app, will run but not
+// when open in different ones. Can only work when opened only on Chrome, only on Firefox, only on
+// Edge, but will have in error if opened simultaneously on each one.
+// Oddly enough, sometimes when I check the Network tab in the inspector and then in the Headers tab
+// the Status Code is coming back as : 200 OK, but when copied the link and pasted, a 404 Not Found
+// error re-occurs. Spent HOURS trying to figure out how the page is being repopulated with data and
+// how the data is even being chosen, and coming up empty handed. Will need to speak to someone 
+// about this, but moving on.
 function handleRefresh() {
   console.log("here");
   var url = "http://gumball.wickedlysmart.com" +
