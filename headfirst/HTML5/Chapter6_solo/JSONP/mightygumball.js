@@ -13,12 +13,13 @@ function init() {
   handleRefresh();
 }
 
+// in original ` url = "http:[...] + '&random' "
 function handleRefresh() {
   console.log("here");
   var url = "https://gumball.wickedlysmart.com" +
               "?callback=updateSales" +
               "&lastreporttime=" + lastReportTime +
-              "&random" + (new Date()).getTime();
+              "&random=" + (new Date()).getTime();
   var newScriptElement = document.createElement("script");
   newScriptElement.setAttribute("src", url);
   newScriptElement.setAttribute("id", "jsonp");
