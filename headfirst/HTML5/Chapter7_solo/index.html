@@ -2,18 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TweetShirt</title>
     <style>
         canvas {
-            border: 1px black solid;
+            border: 1px solid black;
         }
     </style>
     <script src="tweetshirt.js"></script>
 </head>
 <body>
    <h1>Tweetshirt</h1>
+   <!-- added <h1>, not in original book file, makes the page more appealing-->
    <canvas id="tshirtCanvas" width="600" height="200">
-       <p>Please upgrade your browser to use Tweetshirt!</p>
+       <p>You need canvas to use Tweetshirt!</p>
+       <p>This example requires a browser that supports the
+        <a href="http://www.w3.org/html/wg/html5/">HTML5</a>
+        &lt;canvas&gt; feature.</p>
    </canvas>
    <form>
       <p>
@@ -43,11 +49,11 @@
           <select id="tweets"></select>
       </p>
       <p>
-          <input type="button" id="previewButton" value="Preview"
+          <input type="button" id="previewButton" value="Preview">
       </p>
    </form>
 
-   <script type="text/javascript" src="https://www.wickedlysmart.com/hfhtml5/tweetshirt/?callback=updateTweets"></script>
+   <script src="https://www.wickedlysmart.com/hfhtml5/tweetshirt/?callback=updateTweets"></script>
    <!-- <script src="http://api.twitter.com/1/statuses/user_timeline/wickedsmartly.json?callback=updateTweets"></script> -->
    <!-- <script src="http:/tweetshirt.wickedlysmart.com/?callback=updateTweets"></script>  -->
 
