@@ -34,7 +34,7 @@ div#videoDiv canvas {
   left: 0px;
 }
 
-cavas#buffer {
+canvas#buffer {
   display: none;
 }
 
@@ -123,10 +123,11 @@ div#videoSelection {
   top: 0px;
   left: 700px;
   width: 137px;
+  height: 56px;
 }
 
 a#video1 {
-  position: reltive;
+  position: relative;
   width: 68px;
   top: 0px;
 }

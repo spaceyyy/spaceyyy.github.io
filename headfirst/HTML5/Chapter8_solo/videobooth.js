@@ -20,28 +20,27 @@ window.onload = function() {
     controlLinks[i].onclick = handleControl;
   }
 
-  //add click handlers to effect anchors
+  // add click handlers to effect anchors
   var effectLinks = document.querySelectorAll("a.effect");
   for (var i = 0; i < effectLinks.length; i++) {
     effectLinks[i].onclick = setEffect;
   }
 
-  // add click handlers to videoSelection anchors
+  // add clock handlers to videoSelection anchors
   var videoLinks = document.querySelectorAll("a.videoSelection");
   for (var i = 0; i < videoLinks.length; i++) {
     videoLinks[i].onclick = setVideo;
   }
 
   // add click handlers to video play
-  // video.onplay = processFrame;
-  // video.onended = endedHandler;
+  //video.onplay = processFrame;
+  //video.onended = endedHandler;
   video.addEventListener("play", processFrame, false);
   video.addEventListener("ended", endedHandler, false);
 
   pushUnpushButtons("video1", []);
   pushUnpushButtons("normal", []);
 }
-
 
 function setEffect(e) {
   var id = e.target.getAttribute("id");
@@ -65,7 +64,6 @@ function setEffect(e) {
   }
 }
 
-
 function setVideo(e) {
   var id = e.target.getAttribute("id");
   var video = document.getElementById("video");
@@ -82,10 +80,8 @@ function setVideo(e) {
   pushUnpushButtons("play", ["pause"]);
 }
 
-
 function getFormatExtension() {
   var video = document.getElementById("video");
-
   if (video.canPlayType("video/mp4") != "") {  // we know we'll only get "maybe" and empty string as answers,
     return ".mp4";                             // so we'll just make sure our matching type doesn't result in an empty string.
   } else if (video.canPlayType("video/webm") != "") {
@@ -94,7 +90,6 @@ function getFormatExtension() {
     return ".ogv";
   }
 }
-
 
 function handleControl(e) {
   var id = e.target.getAttribute("id");
@@ -139,7 +134,6 @@ function endedHandler(e) {
   pushUnpushButtons("", ["play"]);
 }
 
-
 function processFrame(e) {
   var video = document.getElementById("video");
 
@@ -174,33 +168,8 @@ function processFrame(e) {
 }
 
 
-function noir(pos, r, g, b, data) {  // function called once per pixel in the video frame. last paramater is a reference to the frame data array in the canvas.
-  var brightness = (3*r + 4*g  + b) >>> 3;  // bitwise oper that shifts the bits in the # value over to modify the #
-  if (brightness < 0) brightness = 0;
-  data[pos * 4 + 0] = brightness;
-  data[pos * 4 + 1] = brightness;  // assigning each component in the canv img to that brgtness
-  data[pos * 4 + 2] = brightness;  // `brightness` at the end has the affect of setting the pxl to a grey scale value
-}                                  // that corresponds to the pixel's overall brightness.
-
-
-function western(pos, r, g, b, data) {
-  var brightness = (3*r + 4*g + b) >>> 3;
-  data[pos * 4 + 0] = brightness + 40;
-  data[pos * 4 + 1] = brightness + 20;
-  data[pos * 4 + 2] = brightness - 20;
-  data[pos * 4 + 3] = 255;  // 220;
-}
-
-
-function scifi(pos, r, g, b, data) {
-  var offset = pos * 4;
-  data[offset] = Math.round(255 - r);
-  data[offset + 1] = Math.round(255 - g);
-  data[offset + 2] = Math.round(255 - b);
-}
-
 /*
-* bwcartoon is an extra filter for an excersice
+* bwcartoon is an extra filter for an exercise
 */
 function bwcartoon(pos, r, g, b, outputData) {
   var offset = pos * 4;
@@ -217,6 +186,29 @@ function bwcartoon(pos, r, g, b, outputData) {
   ++offset;
 }
 
+function noir(pos, r, g, b, data) {  // function called once per pixel in the video frame. last paramater is a reference to the frame data array in the canvas.
+  var brightness = (3*r + 4*g + b) >>> 3;  // bitwise oper that shifts the bits in the # value over to modify the #
+  if (brightness < 0) brightness = 0;
+  data[pos * 4 + 0] = brightness;
+  data[pos * 4 + 1] = brightness;  // assigning each component in the canv img to that brgtness
+  data[pos * 4 + 2] = brightness;  // `brightness` at the end has the affect of setting the pxl to a grey scale value
+}                                  // that corresponds to the pixel's overall brightness.
+
+function western(pos, r, g, b, data) {
+  var brightness = (3*r + 4*g + b) >>> 3;
+  data[pos * 4 + 0] = brightness + 40;
+  data[pos * 4 + 1] = brightness + 20;
+  data[pos * 4 + 2] = brightness - 20;
+  data[pos * 4 + 3] = 255;  // 220;
+}
+
+function scifi(pos, r, g, b, data) {
+  var offset = pos * 4;
+  data[offset] = Math.round(255 - r);
+  data[offset + 1] = Math.round(255 - g);
+  data[offset + 2] = Math.round(255 - b);
+}
+
 
 function pushUnpushButtons(idToPush, idArrayToUnpush) {
   if (idToPush != "") {  // check to make sure the `id` of the button to push is not empty
@@ -225,7 +217,7 @@ function pushUnpushButtons(idToPush, idArrayToUnpush) {
     if (!theClass.indexOf("selected") >= 0) {
       theClass = theClass + " selected";  // 'press' the button by adding the "selected" class to the anchor
       anchor.setAttribute("class", theClass);
-      var newImage = "url(images/"+ idToPush + "pressed.png)";  // update the bkgd img of the <a> so it covers up
+      var newImage = "url(images/" + idToPush + "pressed.png)";  // update the bkgd img of the <a> so it covers up
       anchor.style.backgroundImage = newImage;  // that btn w/ a 'button pressed' image. So 'pause' uses the "pausedpressed.png" image
     }
   }
@@ -241,7 +233,6 @@ function pushUnpushButtons(idToPush, idArrayToUnpush) {
   }
 }
 
-
 function isButtonPushed(id) {  // checks to see if a btn is pushed. It takes the `id` of an anchor
   var anchor = document.getElementById(id);
   var theClass = anchor.getAttribute("class");
@@ -249,4 +240,5 @@ function isButtonPushed(id) {  // checks to see if a btn is pushed. It takes the
 }
 
 
-// in the future create a video effect that is psychedlic or any other type of theme/archetype
+// in the future create a video effect that is psychedlic or any other type of theme/archetype and add the cartoon
+// effect which the js code on here has already been coded...
