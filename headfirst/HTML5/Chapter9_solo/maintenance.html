@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maintenance</title>
+  <script>
+    window.onload = function() {
+      var clearButton = document.getElementById("clear_button");    // one button to the page, and this code adds a click handler for the button
+      clearButton.onclick = clearStorage;    // clearStorage function is called once button is clicked
+    }
+
+    function clearStorage() {
+      localStorage.clear();    // Use w/ caution as it will delete all the items associated w/ the origin of this maintenance page!
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <input type="button" id="clear_button" value="Clear storage">
+  </form>
+</body>
+</html>
