@@ -1,7 +1,4 @@
-/*
- * addremove.js
- *
- */
+/* addremove.js */
 
  window.onload = init;
 
@@ -14,7 +11,7 @@ function init() {
    clearButton.onclick = clearItems;
 
    for (key in localStorage) {
-     addItemToDom(key, localStorage[key]);
+     addItemToDOM(key, localStorage[key]);
    }
 
    // add event to watch for changes to localStorage in other
@@ -29,7 +26,7 @@ function init() {
 
    localStorage.setItem(key, value);
 
-   addItemToDom(key, value);
+   addItemToDOM(key, value);
  }
 
  function removeItem(e) {
@@ -39,7 +36,7 @@ function init() {
    removeItemFromDOM(key);
  }
 
-function addItemToDom(key, value) {
+function addItemToDOM(key, value) {
   var items = document.getElementById("items");
 
   var item = document.createElement("li");
@@ -51,11 +48,11 @@ function addItemToDom(key, value) {
   span.setAttribute("class", "note");
 
   // use the noteObj value as the text for the note
-  // var textNode = document.createTextNode(key + ": " + value);
+  //var textNode = document.createTextNode(key + ": " + value);
   span.innerHTML = key + ": " + value;
 
   // add everything to the DOM
-  // span.appendChild(textNode);
+  //span.appendChild(textNode);
   item.appendChild(span);
   items.appendChild(item);
 }
@@ -67,7 +64,7 @@ function removeItemFromDOM(key) {
 }
 
 // To insert at the *beginning* of the list:
-// stickyList.insertBefore(newSticky, stickyList.firstChild);
+//stickyList.insertBefore(newSticky, stickyList.firstChild);
 
 function clearItems() {
   localStorage.clear();
