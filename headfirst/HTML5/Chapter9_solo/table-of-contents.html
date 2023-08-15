@@ -5,7 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 9: Table of Contents</title>
-    <link rel="stylesheet" href="../../../assets/style.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dropdown-content {
+            top: 15px;
+            right: 151px;
+            width: 80%;
+        }
+    </style>
+    <!-- wonder if I can just have `right: 161px; ` for the style above instead
+           of all of the property: values; . When I tried it seemed to overright
+           all the property-values for the selector `.dropdown-content` so wrote
+           them all out instead. May just of been, it took longer for the code
+           to update when `git push` new code so it seemed to not have worked...
+    -->
 </head>
 <body>
     <h1 id="header">Chapter 9: Table of Contents</h1>
@@ -15,6 +28,17 @@
             <td>Description</td>
         </thead>
         <tbody>
+            <tr>
+                <td class="dropdown">
+                    performance
+                    <div class="dropdown-content">
+                        <a href="performance/notetoself.css">notetoself.css</a>
+                        <a href="performance/notetoself.html">notetoself.html</a>
+                        <a href="performance/notetoself.js">notetoself.js</a>
+                    </div>
+                </td>
+                <td>lorem</td>
+            </tr>
             <tr>
                 <td><a href="addremove.html">addremove.html</a></td>
                 <td>lorem</td>
