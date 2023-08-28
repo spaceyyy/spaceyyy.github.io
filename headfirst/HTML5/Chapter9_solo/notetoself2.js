@@ -1,4 +1,4 @@
-/* notetoself.js
+/* notetoself2.js
  *
  * First version after becoming a Sticky Notes app.
  * Uses length to create a new sticky note id.
