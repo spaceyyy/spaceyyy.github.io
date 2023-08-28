@@ -1,9 +1,10 @@
-/* notetoself.js
- *
+/* notetoself.js */
+
+/*
  * This version of notetoself uses a more efficient
  * way of creating new elements to demonstrate how
- * to get better performance from your web paegs.
- */
+ * to get better performance from your web pages.
+*/
 
 window.onload = init;
 
@@ -14,7 +15,7 @@ function init() {
   var stickiesArray = getStickiesArray();
 
   var stickies = document.getElementById("stickies");
-  var fragment = document.createDocumentFragment();   // new...
+  var fragment = document.createDocumentFragment();  // new...
   for (var i = 0; i < stickiesArray.length; i++) {
     var key = stickiesArray[i];
     var value = JSON.parse(localStorage[key]);
@@ -41,7 +42,7 @@ function createSticky() {
   var index = colorSelectObj.selectedIndex;
   var color = colorSelectObj[index].value;
 
-  // creates sticky note using JSON to hold value and color
+  // create sticky note using JSON to hold value and color
   var currentDate = new Date();
   var key = "sticky_" + currentDate.getTime();
   var stickyObj = {
