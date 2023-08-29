@@ -1,6 +1,4 @@
-/*
-* mandel.js
-*/
+/* mandel.js */
 
 var numberOfWorkers = 8;
 var workers = [];
