@@ -1,5 +1,7 @@
+/* worker.js */
+
 //
-// pingpong worker
+// pingpong workers
 //
 onmessage = pingpong;
 
@@ -11,13 +13,3 @@ function pingpong(event) {
     1/x;
   }
 }
-
-/*
-onmessage = pingPong;
-
-function pingPong(event) {
-  if (event.data == "ping") {
-    postMessage("pong");
-  }
-}
-*/

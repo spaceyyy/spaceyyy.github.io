@@ -1,6 +1,4 @@
-/*
-* worker.js
- */
+/* worker.js */
 
 importScripts("workerlib.js");
 

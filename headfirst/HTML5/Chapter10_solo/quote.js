@@ -10,5 +10,6 @@ function postAQuote() {
   var index = Math.floor(Math.random() * quotes.length);
   postMessage(quotes[index]);
 }
+
 postAQuote();
 setInterval(postAQuote, 3000);

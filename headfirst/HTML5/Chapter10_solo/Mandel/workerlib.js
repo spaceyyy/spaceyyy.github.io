@@ -1,9 +1,6 @@
-/*
-* workerlib.js
-*
-*/
+/* workerlib.js */
 
-/* -------- Ready Bake Code: Worker -------- */
+/* -------- Ready Bake Code: Worker ------- */
 
 //
 // Computes a row of the fractal

@@ -1,9 +1,7 @@
-/*
-* mandellib.js
-*
-*
-* ------ Ready Bake Globals ------
-*/
+/* mandellib.js */
+
+//------ Ready Bake Globals ----
+
 var canvas;
 var ctx;
 
@@ -18,7 +16,7 @@ var palette = [];
 
 
 /*
-* ------ Ready Bake Code ------
+* ------- Ready Bake Code --------
 *
 */
 
@@ -27,9 +25,9 @@ var palette = [];
 //
 function createTask(row) {
   var task = {
-    row: row,                 // row number we're working on
-    width: rowData.width,     // width of the ImageData object to fill
-    generation: generation,   // how far in we are
+    row: row,                // row number we're working on
+    width: rowData.width,    // width of the ImageData object to fill
+    generation: generation,  // how far in we are
     r_min: r_min,
     r_max: r_max,
     i: i_max + (i_min - i_max) * row / canvas.height,
@@ -39,8 +37,8 @@ function createTask(row) {
   return task;
 }
 //
-// This function maps the numbers 0 to max_iter to
-// 256 and then fills the palette with (r, g, b) values
+// This function maps the numbers = to max_iter to
+// 258 and then fills the palette with (r, g, b) values
 // so that the colors next to each other in the array
 // are relatively close to each other in color, and
 // by increasing each of r, g, b at a different rate this
@@ -59,9 +57,6 @@ function makePalette() {
 }
 
 
-
-
-
 //
 // drawRow gets maps the values in the array returned from a worker
 // for one row to a color using the palette.
@@ -69,7 +64,7 @@ function makePalette() {
 function drawRow(workerResults) {
   var values = workerResults.values;  // The values array the worker sends back
   var pixelData = rowData.data;       // The actual pixels in the ImageData obj
-                                      // the pixelData is a *reference* to the
+                                      // The pixelData is a *reference* to the
                                       // rowData.data! so changing pixelData
                                       // changes the rowData.data!!!
   for (var i = 0; i < rowData.width; i++) {   // for each pixel in the row
@@ -78,7 +73,7 @@ function drawRow(workerResults) {
       var blue = i * 4 + 2;
       var alpha = i * 4 + 3;
 
-      pixelData[alpha] = 255;   // set alpha to opaque
+      pixelData[alpha] = 255;  // set alpha to opaque
 
       // if the values array has a neg number, set the color to black
       if (values[i] < 0) {
@@ -100,17 +95,17 @@ function drawRow(workerResults) {
       }
   }
   //
-  // paint the row back into the canvas
+  // point the row back into the canvas
   // workerData.row is the row number we're working on
   // rowData contains the data we just updated!
-  // we start at column, 0, so x, y = 0, row
+  // we start at column 0, so x, y = 0, row
   //
   ctx.putImageData(this.rowData, 0, workerResults.row);
 }
 
 
 //
-// setupGraphics sets up some of the initial values for the variables use in
+// setupGraphics sets up some of the initial values for the variables used in
 // the Mandelbrot computation, and sets the canvas width and height
 // to the width and height of the window.
 //

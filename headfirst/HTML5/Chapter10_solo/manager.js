@@ -70,6 +70,7 @@ window.onload = function() {
 		worker.postMessage("ping");
 	}
 }
+
 // exercise... bonus!
 window.onload = function() {
 	var numWorkers = 3;
