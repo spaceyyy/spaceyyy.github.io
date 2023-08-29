@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quote</title>
+</head>
+<body>
+  <p id="quote"></p>
+  <script>
+    var worker = new Worker("quote.js");
+
+    worker.onmessage = function(event) {
+      document.getElementById("quote").innerHTML = event.data;
+    }
+    worker.onerror = function(error) {
+      document.getElementById("quote").innerHTML = error.message;
+    }
+  </script>
+</body>
+</html>
