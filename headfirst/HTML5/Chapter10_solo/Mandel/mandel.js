@@ -57,7 +57,7 @@ function init() {
 //      all the workers in the workers array and assigns
 //      each worker a task to compute a row.
 //  By posting a message with the task, we start the
-//      worker's computation
+//      worker's computation.
 //
 function startWorkers() {
   generation++;
@@ -119,8 +119,8 @@ function reassignWorker(worker) {
 function handleClick(x, y) {
   var width = r_max - r_min;
   var height = i_min - i_max;
-  var click_r = r_min + width * x / canvas.width;
-  var click_i = i_max + height * y / canvas.height;
+  var click_r = r_min + ((width * x) / canvas.width);
+  var click_i = i_max + ((height * y) / canvas.height);
 
   var zoom = 8;
 
