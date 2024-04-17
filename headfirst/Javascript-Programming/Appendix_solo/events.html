@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Handling events in IE8 and earlier</title>
+
+    <style>
+        span {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var div = document.getElementById("clickme");
+            if (div.addEventListener) {
+                div.addEventListener("click", handleClick, false);
+            } else if (div.attachEvent) {
+                div.attachEvent("click", handleClick);
+            }
+        };
+
+        function handleClick(e) {
+            var evt = e || window.event;
+            var target;
+            if (evt.target) {
+                target = evt.target;
+            } else {
+                target = evt.srcElement;
+            }
+            alert("You clicked on " + target.id);
+        }
+
+    </script>
+</head>
+<body>
+    <span id="clickme">Click me!</span>
+    
+</body>
+</html>

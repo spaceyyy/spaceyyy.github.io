@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Handling events in with addEventListener</title>
+
+    <style>
+        span {
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("load", init, false);
+
+        function init() {
+            var div = document.getElementById("clickme");
+            div.addEventListener("click", handleClick, false);
+        }
+
+        function handleClick(e) {
+            var target = e.target;
+            alert("You clicked on " + target.id);
+            target.removeEventListener("click", handleClick, false);
+        }
+
+        /*
+        window.onload = function() {
+            var div = document.getElementById("clickme");
+            div.addEventListener("click", handleClick, false);
+            div.addEventListener("click", handleClickAgain, false);
+        };
+
+        function handleClickAgain() {
+            alert("Another click handler just executed!");
+        }
+        */
+    </script>
+</head>
+<body>
+    <div id="clickme">Click me!</div>    
+
+</body>
+</html>
