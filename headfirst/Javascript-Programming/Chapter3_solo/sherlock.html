@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+  <title>Five Minute Mystery</title>
+</head>
+<body>
+  <p id="placementText"></p>
+
+  <script>
+    var balance = 10500;
+    var cameraOn = true;
+
+    function steal(balance, amount) {
+      cameraOn = false;
+      if (amount < balance) {
+        balance = balance - amount;
+      }
+      return amount;
+      cameraOn = true;
+    }
+
+    var amount = steal(balance, 1250);
+    alert("Criminal: you stole " + amount + "!");
+    alert(balance)                                     // balance is not effected do to parameter's balance causing it to be shadowed
+
+    document.getElementById('placementText').innerHTML = "Criminal: you stole " + amount + "!";
+  </script>
+
+</body>
+</html>
