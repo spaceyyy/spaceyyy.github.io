@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Aloha</title>
+    <script>
+        function sayIt(translator) {
+            var phrase = translator("Hello");
+            alert(phrase);
+        }
+
+        function hawaiinTranslator(word) {
+            if (word === "Hello") return "Aloha";
+            if (word === "Goodbye") return "Aloha";
+        }
+
+        sayIt(hawaiinTranslator);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

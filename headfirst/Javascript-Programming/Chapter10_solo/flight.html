@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Take Off</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+</head>
+<body>
+  <script>
+    var passengers = [
+                       { name: "Jane Doloop", paid: true, ticket: "coach"},
+                       { name: "Dr. Evel", paid: true, ticket: "firstclass"},
+                       { name: "Sue Property", paid: false, ticket: "firstclass"},
+                       { name: "John Funcall", paid: true, ticket: "coach"}
+                     ];
+
+    function processPassengers(passengers, test) {
+      for (var i = 0; i < passengers.length; i++) {
+        if (test(passengers[i])) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function checkNoFlyList(passenger) {
+      return (passenger.name === "Dr. Evel");
+    }
+
+    function checkNotPaid(passenger) {
+      return (!passenger.paid);
+    }
+
+    function printPassenger(passenger) {
+      for(var i = 0; i < passenger.length; i++) {
+        if(checkNotPaid(passenger[i])) {
+          console.log(passenger[i].name + " has not paid");
+        } else {
+          console.log(passenger[i].name + " has paid.");
+        }
+      }
+    }
+
+    function createDrinkOrder(passenger) {
+      var orderFunction;
+
+      if (passenger.ticket === "firstclass") {
+        orderFunction = function() {
+          alert("Would you like a cocktail or wine?");
+        };
+      } else if (passenger.ticket === "premium") {
+        orderFunction = function() {
+          alert("Would you like wine, cola or water?");
+        };
+      } else {
+          orderFunction = function() {
+            alert("Your choice is cola or water.");
+        };
+      }
+      return orderFunction;
+    }
+
+
+    function createDinnerOrder(passenger) {
+      var orderFunction;
+
+      if (passenger.ticket === "firstclass") {
+        orderFunction = function() {
+          alert("Would you like chicken or pasta?");
+        };
+      } else if (passenger.ticket === "premium") {
+          orderFunction = function() {
+            alert("Would you like a snack box or cheese plate?");
+        };
+      } else {
+          orderFunction = function() {
+            alert("Would you prefer peanuts or pretzels?");
+          };
+        }
+        return orderFunction;
+      }
+
+      function pickupTrash() {
+        alert("Can I have your trash, please?");
+      }
+
+
+    function serveCustomer(passenger) {
+      var getDrinkOrderFunction = createDrinkOrder(passenger);
+      var getDinnerOrderFunction = createDinnerOrder(passenger);
+
+      getDrinkOrderFunction();
+      
+      // get dinner order
+      getDinnerOrderFunction();
+      
+      // get drink order
+      getDrinkOrderFunction();
+      getDrinkOrderFunction();
+      getDrinkOrderFunction();
+      
+      // pick up trash
+      pickupTrash();
+    }
+
+    //
+    // plane can only fly if every passenger is on the fly list
+    //
+    var allCanFly = processPassengers(passengers, checkNoFlyList);
+    if (!allCanFly) {
+      console.log("The plane can't take off: we have a passenger on the no-fly-list.");
+    }
+
+    // 
+    // plane can only fly if every passenger has paid
+    //
+    var allPaid = processPassengers(passengers, checkNotPaid);
+    if(!allPaid) {
+      console.log("The plane can't take off: not everyone has paid.");
+    }
+
+    printPassenger(passengers, printPassenger);
+
+
+    function servePassengers(passengers) {
+      for (var i = 0; i < passengers.length; i++) {
+        serveCustomer(passengers[i]);
+      }
+    }
+
+    servePassengers(passengers);
+
+  </script>
+
+</body>
+</html>
