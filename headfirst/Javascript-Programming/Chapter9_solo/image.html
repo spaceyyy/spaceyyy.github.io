@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Image Guess</title>
+  <style>
+    body {
+      margin: 20px;
+    }
+
+    img {
+      margin: 20px;
+    }
+  </style>
+  <script>
+    window.onload = init;
+
+
+    function init() {
+      var images = document.getElementsByTagName("img");
+      for (var i = 0; i < images.length; i++) {
+        images[i].onclick = showAnswer;
+        // images[i].onmouseover = showAnswer;
+        // images[i].onmouseout = reblur;
+      }
+    };
+
+    function showAnswer(eventObj) {
+      var image = eventObj.target;
+      var name = image.id;
+      name = "images/" + name + ".jpg";
+      image.src = name;
+
+      setTimeout(reblur, 2000, image);  // comment out when uncommenting commented code
+    }
+
+    function reblur(image) {  // change parameter to eventObj for uncommenting code
+      // var image = eventObj.target;
+      var name = image.id;
+      name = "images/" + name + "blur.jpg";
+      image.src = name;
+    }
+
+  </script>
+</head>
+<body>
+  <img id="zero" alt="Blurred Image of Mona Lisa" src="images/zeroblur.jpg">
+  <img id="one" alt="Blurred Image ..." src="images/oneblur.jpg">
+  <img id="two" alt="Blurred Image ..." src="images/twoblur.jpg">
+  <img id="three" alt="Blurred Image ..." src="images/threeblur.jpg">
+  <img id="four" alt="Blurred Image ..." src="images/fourblur.jpg">
+  <img id="five" alt="Blurred Image ..." src="images/fiveblur.jpg">
+
+  
+</body>
+</html>
