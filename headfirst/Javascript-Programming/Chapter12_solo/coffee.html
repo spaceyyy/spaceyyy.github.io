@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+  <title>Coffee Constructor Exercise</title>
+  <script>
+    function Coffee(roast, ounces) {
+      this.roast = roast;
+      this.ounces = ounces;
+      this.getSize = function() {
+        if (this.ounces > 15) {
+          return "16oz, large";
+        } else if (this.ounces > 11) {
+          return "12oz, medium";
+        } else if (this.ounces > 7) {
+          return "8oz, small"
+        } else {
+          return "Excuse me?"
+        }
+      };
+      this.toString = function() {
+        return "You've ordered a " + this.getSize() + " " + this.roast + " coffee.";
+      };
+    }
+
+    var houseBlend = new Coffee("House Blend", 12);
+    console.log(houseBlend.toString());
+
+    var darkRoast = new Coffee("Dark Roast", 16);
+    console.log(darkRoast.toString());
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Palindrome</title>
+    <script>
+        String.prototype.palindrome = function() {
+            var len = this.length-1;
+            for (var i = 0; i <= len/2; i++) {
+                if (this.charAt(i) !== this.charAt(len-i)) {
+                return false;
+                }
+            }
+            return true;
+            };
+
+            var phrases = ["eve", 
+                           "kayak", 
+                            "mom", 
+                            "wow",
+                            "noon", 
+                            "Not a palindrome"];
+
+            for (var i = 0; i < phrases.length; i++) {
+            var phrase = phrases[i];
+            if (phrase.palindrome()) {
+                console.log("'" + phrase + "' is a palindrome");
+            } else {
+                console.log("'" + phrase + "' is NOT a palindrome");
+            }
+            }
+
+    //  Super Advanced Solution below, (check page 661 of 704 for explaination)
+
+        String.prototype.palindromeAdv = function() {
+          var r = this.split("").reverse().join("");
+          return (r === this.valueOf());
+      }
+
+      for (var i = 0; i < phrases.length; i++) {
+        var phrase = phrases[i];
+        if (phrase.palindromeAdv()) {
+            console.log("'" + phrase + "' is a palindrome");
+        } else {
+            console.log("'" + phrase + "' is NOT a palindrome");
+        }
+      }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Prototype Exercise</title>
+  <script>
+    function CarPrototype() {
+      this.make = "Tesla"
+      this.year = 2019;
+      this.started = false;
+      this.color = "black";
+      this.stereo = "mini-LCD"
+      this.start = function() {
+        this.started = true;
+      };
+      this.stop = function() {
+        this.started = false;
+      };
+      this.drive = function() {
+        alert("Tesla zaps away!");
+      };
+      this.turbo = function() {
+        alert("Tesla uses hyperspeed functionality!");
+      };
+      this.cruise = function() {
+        alert("Cruise control activated.");
+      };
+      this.gps = function() {
+        alert("GPS monitor activated.");
+      }
+
+    }
+
+    var car = new CarPrototype();
+
+    var car2 = new CarPrototype();
+    car2.model = "Delorean Remake";
+    car2.color = "silver";
+    car2.currentTime = new Date();
+    car2.timeTravel = function(date) {
+      alert("Time Travel initiating!");
+    }
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

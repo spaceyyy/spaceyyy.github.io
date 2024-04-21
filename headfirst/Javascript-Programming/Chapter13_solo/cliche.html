@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Extending the String prototype with a new method</title>
+  <script>
+    // Using Inheritance by extending a built-in object
+
+    String.prototype.cliche = function() {
+      var cliche = ["lock and load", "touch base", "open the kimono"];
+
+      for (var i = 0; i < cliche.length; i++) {
+        var index = this.indexOf(cliche[i]);
+        if (index >= 0) {
+          return true;
+        }
+      }
+      return false;
+    };
+
+    var sentences = ["I'll send my car around to pick you up.",
+                     "Let's touch base in the morning and see where we are",
+                     "We don't want to open the kimono, we just want to inform them."];
+
+    for (var i = 0; i < sentences.length; i++) {
+      var phrase = sentences[i];
+      if (phrase.cliche()) {
+        console.log("CLICHE ALERT: " + phrase);
+      }
+    }
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
