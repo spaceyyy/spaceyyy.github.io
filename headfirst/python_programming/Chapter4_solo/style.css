@@ -55,8 +55,8 @@ td {
   display: none;
   position: absolute;
   top: 20px;
-  right: 127px;
-  width: 100%;
+  right: 297px;
+  width: 40%;
   overflow: auto;
   box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
 }
